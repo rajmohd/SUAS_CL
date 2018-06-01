@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#rcorners1 {
+    border-radius: 50px;
+    background: #73A321;
+    padding: 10px; 
+    width: 20px;
+    height: 20px;    
+}
+
+#rcorners2 {
+    border-radius: 50px;
+    border: 2px solid #73AD21;
+    padding: 10px; 
+    width: 20px;
+    height: 20px;    
+}
+
+#rcorners3 {
+    border-radius: 50px;
+    background: url(paper.gif);
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 10px; 
+    width: 20px;
+    height: 20px;    
+}
+img {
+    border-radius: 50%;
+}
+body {
+        background-image: url("images.jpeg");
+        background-color: #cccccc;
+	background-repeat:no-repeat;
+	background-attachment:scroll;
+	background-position:center center;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:blue;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+<script type="text/javascript">
+    
+</script>
+</head>
+
+<body>
+
+<h2>User Authentication Using Graphical Passwords  </h2>
+<p>Select  images by Drag and Drop 
+Method and Select and Rearrange Images, 
+Click on Next to get set of Images 
+and finally submit the Password Using CheckBox</p>
+
+<div>
+<div <div style="position:fixed;left:450px " >
+<input type="checkbox" /><input type="password" id="rcorners1" name="corner1" /></div>
+<div <div style=" position:fixed ;right:400px" />
+<input type="checkbox" /><input type="password"  id="rcorners1"  name="corner2"/>
+</div>
+
+<ul>
+<ul>
+   <img src="images/1.png" alt="Paris" width="50" height="50">
+    <img src="images/2.png" alt="Paris" width="50" height="50">
+    <img src="images/3.png" alt="Paris" width="50" height="50">
+   
+ </ul>
+
+<ul>
+   
+    <img src="images/12.png" alt="Paris" width="50" height="50">
+    <img src="images/13.png" alt="Paris" width="50" height="50">
+	<img src="images/14.png" alt="Paris" width="50" height="50">
+	<img src="images/15.png" alt="Paris" width="50" height="50">
+ </ul>
+
+<ul>
+<img src="images/23.png" alt="Paris" width="50" height="50">
+<img src="images/24.png" alt="Paris" width="50" height="50">
+<img src="images/25.png" alt="Paris" width="50" height="50">
+<img src="images/26.png" alt="Paris" width="50" height="50">
+<img src="images/27.png" alt="Paris" width="50" height="50">
+</ul>
+<ul>
+<img src="images/30.png" alt="Paris" width="50" height="50">
+<img src="images/31.png" alt="Paris" width="50" height="50">
+<img src="images/32.png" alt="Paris" width="50" height="50">
+<img src="images/33.png" alt="Paris" width="50" height="50">
+</ul>
+
+<ul>
+    <img src="images/35.png" alt="Paris" width="50" height="50">
+    <img src="images/36.png" alt="Paris" width="50" height="50">
+    <img src="images/37.png" alt="Paris" width="50" height="50">
+ </ul>
+ 
+</div>
+<div style="position:fixed;left:450px "><input type="checkbox" /><input type="password" id="rcorners1" name="corner3"/></div>
+<div style="position:fixed;right:400px ">
+<input type="checkbox" /> <input type="password" id="rcorners1"  name="corner4"/> 
+
+</div>
+<button class="button" style="vertical-align:middle"> <span>Rearrange</span> </button>
+<button class="button" style="vertical-align:middle"> <span>Next</span> </button>
+<button class="button" style="vertical-align:middle"> <span>Submit</span> </button>
+
+</body>
+</html>
+

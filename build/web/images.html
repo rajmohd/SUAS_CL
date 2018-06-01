@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.rcorners1 {
+    border-radius: 50px;
+    background: #73A321;
+    padding: 10px; 
+    width: 30px;
+    height: 30px;    
+}
+
+#rcorners2 {
+    border-radius: 50px;
+    border: 2px solid #73AD21;
+    padding: 10px; 
+    width: 20px;
+    height: 20px;    
+}
+
+#rcorners3 {
+    border-radius: 50px;
+    background: url(paper.gif);
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 10px; 
+    width: 20px;
+    height: 20px;    
+}
+img {
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+    }
+body {
+    background-image: url("images.jpg");
+    background-color: #cccccc;
+	background-repeat:no-repeat;
+	background-attachment:scroll;
+	background-position:center top;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:blue;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+<script language="javascript"> 
+ var rate_value="";
+ var hasher="";
+ var count=0;
+ var pwd="";
+function allowDrop(ev) {
+    //ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop_p1(ev) {
+   // ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    //var s1=document.getElementById(p1).value;
+    var s=document.getElementById(p1).setData(data);
+    var s1=encrypt(s);
+   // alert(s1);
+    window.alert(s1);
+   // ev.target.appendChild(document.getElementById(data));
+}
+function drop_p2(ev) {
+   // ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+   
+    var s2=document.getElementById(p2).setData(data);
+    window.alert(s2);
+ //  ev.target.appendChild(document.getElementById(data));
+}
+function drop_p3(ev) {
+   // ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+   
+    var s3=document.getElementById(p3).setData(data);
+   window.alert(s3);
+    //ev.target.appendChild(document.getElementById(data));
+}
+function drop_p4(ev) {
+   // ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    
+    var s4=document.getElementById(p4).setData(data);
+    window.alert(s4);
+    //ev.target.appendChild(document.getElementById(data));
+}
+
+function function_r1(){
+ if (document.getElementById('r1').checked) {
+ rate_value +=document.getElementById('1').name;
+ count=count+1;
+}}
+function function_r2(){
+if (document.getElementById('r2').checked) {
+ rate_value += document.getElementById('2').name;
+ count=count+1;
+}}
+function function_r3(){
+if (document.getElementById('r3').checked) {
+ rate_value +=document.getElementById('3').name;
+ count=count+1;
+}}
+function function_r4(){
+if (document.getElementById('r4').checked) {
+ rate_value +=document.getElementById('4').name;
+ count=count+1;
+}}
+function generate_pwd()
+{
+    if(document.getElementById(r1).checked){
+        var pwd+=s1;
+    }
+    elif(document.getElementById(r2).checked){
+        var pwd+=s2;
+    }
+    elif(document.getElementById(r3).checked){
+        var pwd+=s3;
+    }
+    elif(document.getElementById(r4).checked){
+        var pwd+=s4;
+    }
+    if(document.getElementById(r1).checked && document.getElementById(r2).checked)
+    {
+         pwd=""+s1+""+s2;
+     }
+      if(document.getElementById(r1).checked && document.getElementById(r3).checked)
+    {
+         pwd=""+s1+""+s3;
+     }
+      if(document.getElementById(r1).checked && document.getElementById(r4).checked)
+    {
+         pwd=""+s1+""+s4;
+     }
+      if(document.getElementById(r2).checked && document.getElementById(r3).checked)
+    {
+         pwd=""+s2+""+s3;
+     }
+      if(document.getElementById(r2).checked && document.getElementById(r4).checked)
+    {
+         pwd=""+s2+""+s4;
+     }
+   // return pwd;
+    window.alert(pwd);
+}
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+    <div align="center">
+<h2>User Authentication Using Graphical Passwords  </h2>
+<p>Select  images by Drag and Drop <br />
+Method and Select and Rearrange Images, <br />
+Click on Next to get set of Images <br />
+and finally submit the Password Using CheckBox</p>
+    </div>
+<div align="center">
+<div style="position:fixed;left:450px ">
+<input type="checkbox" id="r1" onclick="function_r1()" /><input type="password" class="rcorners1" id="p1" ondrop="drop(event)" ondragover="allowDrop(event)" name="corner1" /></div>
+<div style=" position:fixed ;right:400px" />
+<input type="checkbox" id="r2" onclick="function_r2()" /><input type="password"  class="rcorners1" id="p2" ondrop="drop(event)" ondragover="allowDrop(event)" name="corner2"/>
+</div>
+</div>
+<div align="center"/>
+<script type = "text/javascript">
+
+function triangles(n) {
+n = Math.floor(n);
+
+document.write("<pre>");
+for (var i=3; i<=n; i++) {
+   // var count=0;
+  
+for (var k=1; k<=i; k++) {
+     var loopEnd1 = Math.floor(Math.random() * 19)+1;
+
+ //    document.write(imgArray[c]);
+  //   c++;
+  document.write("<img draggable='true'ondrop='drop(event)' ondragover='allowDrop(event)' align='center' " + "src='images/" +(loopEnd1)+ ".png'>");
+//document.write("<img align='center' "+"src='images/'"+i+"'.png'"+"height='40px' width='40px'/>");
+//count++;
+//document.write("*");
+}
+
+document.write("<br>");
+}
+
+//document.write("<br>");
+
+for (var i=4; i>=3; i--) {
+    //var count = 0;
+    
+for (var k=i; k>=1; k--) {
+   // count++;
+   var loopEnd2 = Math.floor(Math.random()*40)+20;
+//document.write("<img align='center' "+"src='images/'"+i+"'.png'""/>");
+document.write("<img draggable='true' ondrop='drop(event)' ondragover='allowDrop(event)' align='center' " + "src='images/" +(loopEnd2)+ ".png'>");
+//document.write(imgArray[c].src);
+//c++;
+//document.write("*");
+}
+ document.write("<br>");
+
+}
+document.write("</pre>");
+}
+
+
+triangles(5); // 5 is number of rows in triangle
+
+</script>
+</div>
+ 
+<div style="position:fixed;left:450px "><input type="checkbox" id="r3" onclick="function_r3()" /><input type="password" class="rcorners1" id="p3" ondrop="drop(event)" ondragover="allowDrop(event)" name="corner3"/></div>
+<div style="position:fixed;right:400px ">
+<input type="checkbox" id="r4" onclick="function_r4()" /> <input type="password" class="rcorners1" id="p4" ondrop="drop(event)" ondragover="allowDrop(event)" name="corner4"/> 
+
+</div>
+<div align="center">
+<button class="button" style="vertical-align:middle" onclick="reset"> <span>Rearrange</span> </button>
+<button class="button" style="vertical-align:middle" onclick=""> <span>Next</span> </button>
+<button class="button" style="vertical-align:middle" onclick="generate_pwd()"> <span>Submit</span> </button>
+</div>
+    </form>
+</body>
+
+</html>
+
